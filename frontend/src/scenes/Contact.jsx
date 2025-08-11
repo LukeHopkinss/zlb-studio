@@ -12,9 +12,9 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen text-white flex flex-col justify-center items-center px-4">
-      <h1 className="absolute text-3xl font-creatoBold top-110">Contact Us</h1>
+      <h1 className="absolute text-3xl font-creatoBold top-60">Contact Us</h1>
       
-      <ContactForm key={key} />
+      <h1 className="relative mt-[10rem]"><ContactForm key={key} /></h1>
     </div>
   );
 }
