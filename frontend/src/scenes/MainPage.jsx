@@ -30,7 +30,7 @@ const MainPage = () => {
     <div className="relative text-white bg-black overflow-x-hidden">
 
       <div className="flex justify-center items-center h-screen relative">
-        <h1 className="text-9xl">zlb studio</h1>
+        <h1 className="text-7xl">zlb studio</h1>
 
         {showScrollText && !hideScrollText && (
           <div className="absolute left-1/2 translate-x-[-50%] top-[65%] text-sm flex flex-col items-center animate-fade-bob">

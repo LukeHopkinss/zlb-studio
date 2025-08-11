@@ -68,7 +68,7 @@ export default function Navbar() {
                         ref={(el) => (refs.current[i] = el)}
                         onClick={() => handleClick(i)}
                         style={{ fontFamily: 'creato' }}
-                        className={`cursor-pointer text-4xl px-4 py-2 transition-all ${active === i ? "text-black" : "text-white"}`}
+                        className={`cursor-pointer text-3xl px-4 py-2 transition-all ${active === i ? "text-black" : "text-white"}`}
                     >
                         <Link to={link.path} className="block w-full h-full">
                         {link.label}
