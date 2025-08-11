@@ -57,7 +57,7 @@ const MainPage = () => {
       </div>
 
 
-      <div className="min-h-screen flex flex-col items-start px-8 md:px-20 lg:px-32 max-w-5xl mx-auto space-y-2 transform translate-x-0 md:-translate-x-12 lg:-translate-x-100 -mt-[10rem]">
+      <div className="min-h-screen flex flex-col items-start px-8 md:px-20 lg:px-32 max-w-5xl mx-auto space-y-2 transform translate-x-0 md:-translate-x-12 lg:-translate-x-50 -mt-[10rem]">
         <motion.div
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -73,14 +73,14 @@ const MainPage = () => {
 
      
 
-      <div className="relative -mt-[40rem]">
-         <div className="absolute left-[65%] text-6xl font-creatoBold z-10">
+      <div className="relative -mt-[20rem]">
+         <div className="absolute left-[60%] text-5xl font-creatoBold z-10">
             <p>our services</p>
         </div>
         <Roadmap />
       </div>
 
-      <div className="relative w-full flex justify-center items-center -translate-y-[25rem] z-10 pb-40">
+      <div className="relative w-full flex justify-center items-center -translate-y-[20rem] z-10 pb-40">
           <ContactButton />
       </div>
     </div>

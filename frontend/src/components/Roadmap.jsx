@@ -98,9 +98,9 @@ export default function Roadmap() {
             <div
               className="rounded-full bg-white text-black font-bold flex items-center justify-center shadow-lg transition-all duration-300 text-center overflow-hidden"
               style={{
-                width: isHovered ? '25vw' : '10vw',
-                height: isHovered ? '25vw' : '10vw',
-                fontSize: isHovered ? '1.5rem' : '1.25rem',
+                width: isHovered ? '30vw' : '10vw',
+                height: isHovered ? '30vw' : '10vw',
+                fontSize: isHovered ? '1.25rem' : '1rem',
                 paddingLeft: isHovered ? '1rem' : '0',
                 paddingRight: isHovered ? '1rem' : '0',
               }}
@@ -124,7 +124,7 @@ export default function Roadmap() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.25, ease: "easeOut" }}
-                    className="text-2xl font-creatoBold hidden md:block"
+                    className="text-xl font-creatoBold hidden md:block"
                   >
                     {step.id}
                   </motion.div>
