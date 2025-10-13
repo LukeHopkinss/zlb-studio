@@ -98,7 +98,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="flex justify-center -mt-[17.5rem] pb-80">
+      <div className="flex justify-center -mt-[7.5rem] pb-80">
         <ContactButton />
       </div>
     

@@ -15,7 +15,7 @@ export default function Villarreal() {
 
         {/* Bio */}
         <p className="text-sm text-white/80 leading-snug px-2">
-          Hopkins leads creative strategy with a deep background in multimedia storytelling and brand expression. His direction shapes cohesive and visually impactful narratives for client campaigns.
+          Villareal defines the studio's visual language and guides concept-to-execution craft. Oversees mood boards, art direction, and review cycles to ensure every deliverable is on-brand, original, and production-ready.
         </p>
       </div>
     </div>

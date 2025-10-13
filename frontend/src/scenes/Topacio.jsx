@@ -10,12 +10,12 @@ export default function Topacio() {
         {/* Name & Role */}
         <div>
           <h2 className="text-lg font-semibold">Luke Topacio</h2>
-          <p className="text-xs text-white/60">Creative Director</p>
+          <p className="text-xs text-white/60">Chief Marketing Officer</p>
         </div>
 
         {/* Bio */}
         <p className="text-sm text-white/80 leading-snug px-2">
-          Hopkins leads creative strategy with a deep background in multimedia storytelling and brand expression. His direction shapes cohesive and visually impactful narratives for client campaigns.
+          Owns growth strategy and brand storytelling, leading campaigns across social, email, and partnerships. Builds the marketing funnel, tracks pipeline metrics, and drives creator/brand collaborations that convert.
         </p>
       </div>
     </div>

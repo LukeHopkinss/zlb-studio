@@ -10,12 +10,12 @@ export default function Hopkins() {
         {/* Name & Role */}
         <div>
           <h2 className="text-lg font-semibold">Luke Hopkins</h2>
-          <p className="text-xs text-white/60">Creative Director</p>
+          <p className="text-xs text-white/60">Chief Technical & Executive Officer</p>
         </div>
 
         {/* Bio */}
         <p className="text-sm text-white/80 leading-snug px-2">
-          Hopkins leads creative strategy with a deep background in multimedia storytelling and brand expression. His direction shapes cohesive and visually impactful narratives for client campaigns.
+          Owns the technical stack and production pipeline—prototyping, tooling, and final output. Directs leadership across teams, sets engineering standards, and aligns priorities to deliver reliable, scalable work.
         </p>
       </div>
     </div>

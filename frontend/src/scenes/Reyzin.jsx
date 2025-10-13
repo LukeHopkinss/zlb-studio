@@ -10,12 +10,12 @@ export default function Reyzin() {
         {/* Name & Role */}
         <div>
           <h2 className="text-lg font-semibold">Nick Reyzin</h2>
-          <p className="text-xs text-white/60">Creative Director</p>
+          <p className="text-xs text-white/60">Chief Operations Officer</p>
         </div>
 
         {/* Bio */}
         <p className="text-sm text-white/80 leading-snug px-2">
-          Nick leads creative strategy with a deep background in multimedia storytelling and brand expression. His direction shapes cohesive and visually impactful narratives for client campaigns.
+          Reyzin runs day-to-day operations, turning ideas into schedules, budgets, and vendor plans. Optimizes resourcing, negotiates contracts, and keeps timelines unblocked so projects ship on time and on quality.
         </p>
       </div>
     </div>
