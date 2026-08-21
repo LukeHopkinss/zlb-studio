@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function ContactForm() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     return () => setSubmitted(false);
@@ -15,13 +16,19 @@ export default function ContactForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
-    });
-    setSubmitted(true);
-    setFormData({ name: '', email: '', message: '' });
+    setError(false);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error('Request failed');
+      setSubmitted(true);
+      setFormData({ name: '', email: '', message: '' });
+    } catch {
+      setError(true);
+    }
   };
 
   return (
@@ -75,6 +82,11 @@ export default function ContactForm() {
               placeholder="Your message"
               required
             />
+            {error && (
+              <p className="text-sm text-red-400">
+                Something went wrong sending your message. Please try again.
+              </p>
+            )}
             <button
               type="submit"
               className="px-6 py-2 border border-white text-white hover:bg-white hover:text-black transition duration-300"

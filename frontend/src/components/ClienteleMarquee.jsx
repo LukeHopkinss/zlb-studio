@@ -13,7 +13,7 @@ export default function ClienteleMarquee() {
             key={i}
             src={logo}
             alt={`Client logo ${i}`}
-            className="mx-8 h-[12rem] w-auto object-contain shrink-0"
+            className="mx-4 sm:mx-6 lg:mx-8 h-16 sm:h-28 lg:h-[12rem] w-auto object-contain shrink-0"
           />
         ))}
       </div>

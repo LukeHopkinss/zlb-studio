@@ -10,11 +10,11 @@ export default function Header() {
   };
 
   return (
-    <div className="fixed top-15 left-15 w-full z-50 p-4">
+    <div className="fixed top-6 left-6 sm:top-10 sm:left-10 lg:top-15 lg:left-15 w-full z-50 p-4">
       <Link
         to="/"
         onClick={handleClick}
-        className="font-allura text-white font-bold text-8xl hover:text-gray-700 transition duration-300"
+        className="font-allura text-white font-bold text-5xl sm:text-6xl lg:text-8xl hover:text-gray-700 transition duration-300"
       >
         z
       </Link>

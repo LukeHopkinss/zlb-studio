@@ -1,5 +1,5 @@
 import {motion} from 'framer-motion';
-import { useRef, useState, useEffect, act} from 'react';
+import { useRef, useState, useEffect} from 'react';
 import NavbarHighlight from './NavbarHighlight';
 import { useLocation, Link } from 'react-router-dom'
 
@@ -57,8 +57,8 @@ export default function Navbar() {
     }, [active]);
 
     return(
-        <div className='fixed bottom-0 left-0 w-full bg-transparent text-white py-15 z-50'>
-            <div className='flex justify-center gap-10'>
+        <div className='fixed bottom-0 left-0 w-full bg-transparent text-white py-6 sm:py-10 lg:py-15 z-50'>
+            <div className='flex justify-center gap-4 sm:gap-6 lg:gap-10'>
 
                 <NavbarHighlight layout={layout}/>
 
@@ -66,11 +66,13 @@ export default function Navbar() {
                     <motion.div
                         key={i}
                         ref={(el) => (refs.current[i] = el)}
-                        onClick={() => handleClick(i)}
                         style={{ fontFamily: 'creato' }}
-                        className={`cursor-pointer text-3xl px-4 py-2 transition-all ${active === i ? "text-black" : "text-white"}`}
                     >
-                        <Link to={link.path} className="block w-full h-full">
+                        <Link
+                            to={link.path}
+                            onClick={() => handleClick(i)}
+                            className={`block cursor-pointer text-lg sm:text-2xl lg:text-3xl px-2 sm:px-3 lg:px-4 py-2 transition-all ${active === i ? "text-black" : "text-white"}`}
+                        >
                         {link.label}
                         </Link>
                     </motion.div>
