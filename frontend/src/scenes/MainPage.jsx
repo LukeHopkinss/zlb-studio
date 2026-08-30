@@ -2,10 +2,19 @@ import { useEffect, useState } from "react";
 import ClienteleMarquee from "../components/ClienteleMarquee";
 import {motion} from "framer-motion"
 import ContactButton from "../components/ContactButton";
+import WorkGrid from "../components/work/WorkGrid";
+import useDocumentMeta from "../hooks/useDocumentMeta";
 
 const MainPage = () => {
   const [hideScrollText, setHideScrollText] = useState(false);
   const [showScrollText, setShowScrollText] = useState(false);
+
+  useDocumentMeta({
+    title: "work",
+    description:
+      "zlb studio designs and builds websites for startups and brands, combining clean design with solid engineering. See our work for PYM Magazine, NYU Stern LARA, and Vista Kids Dental.",
+    path: "/",
+  });
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -56,7 +65,7 @@ const MainPage = () => {
       </div>
 
 
-      <div className="min-h-screen flex flex-col items-start px-6 md:px-20 lg:px-32 max-w-5xl mx-auto space-y-2 transform translate-x-0 md:-translate-x-12 lg:-translate-x-50 -mt-[10rem]">
+      <div className="flex flex-col items-start px-6 sm:pl-28 sm:pr-12 lg:pl-38 lg:pr-16 max-w-5xl mx-auto sm:mx-0 space-y-2 -mt-[10rem]">
         <motion.div
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -68,6 +77,13 @@ const MainPage = () => {
             <p className="text-xl sm:text-2xl lg:text-3xl">from first concept to launch, we handle the full build,</p>
             <p className="text-xl sm:text-2xl lg:text-3xl">helping our clients ship fast with sites that actually work.</p>
         </motion.div>
+      </div>
+
+      {/* Work sits in its own full-width container rather than inside the
+          text block above — that block is deliberately left-anchored to the
+          Z logo, so centering within it would land off-center on screen. */}
+      <div className="w-full px-6 mt-32 sm:mt-44">
+        <WorkGrid />
       </div>
 
      

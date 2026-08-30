@@ -26,14 +26,13 @@ export default function Navbar() {
     useEffect(() => {
 
         const currentPath = location.pathname.toLowerCase();
-        let matchedIndex;
-        if (currentPath === '/') {
-        matchedIndex = 0; 
-        } 
-        
-        else {
-        matchedIndex = links.findIndex((link) => link.path.toLowerCase() === currentPath);
-        }
+        const matchedIndex = links.findIndex((link) => {
+            const path = link.path.toLowerCase();
+            if (path === '/') {
+                return currentPath === '/' || currentPath.startsWith('/work/');
+            }
+            return currentPath === path || currentPath.startsWith(`${path}/`);
+        });
 
         setTimeout(() => {
             if (refs.current[matchedIndex]) {

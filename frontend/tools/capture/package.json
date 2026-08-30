@@ -1,0 +1,19 @@
+{
+  "name": "zlb-studio-capture",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "discover": "tsx discover.ts",
+    "stills": "tsx stills.ts",
+    "video-frames": "tsx video-frames.ts",
+    "video-realtime": "tsx video-realtime.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "playwright": "^1.49.1",
+    "sharp": "^0.33.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

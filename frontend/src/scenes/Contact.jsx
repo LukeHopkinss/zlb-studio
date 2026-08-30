@@ -1,8 +1,16 @@
 import { useEffect, useState } from "react";
 import ContactForm from "../components/ContactForm";
+import useDocumentMeta from "../hooks/useDocumentMeta";
 
 export default function Contact() {
   const [key, setKey] = useState(0);
+
+  useDocumentMeta({
+    title: "contact",
+    description:
+      "Start a project with zlb studio. Tell us what you're building and we'll get back to you.",
+    path: "/contact",
+  });
 
   useEffect(() => {
     const resetForm = () => setKey((prev) => prev + 1);

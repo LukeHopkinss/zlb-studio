@@ -1,0 +1,28 @@
+{
+  "slug": "peeyew",
+  "name": "PEEYEW.net",
+  "url": "https://www.peeyew.net",
+  "outcome": "TODO: real one-line result statement",
+  "capturedAt": "2026-08-27",
+  "caseStudy": {
+    "problem": "TODO: the problem in two or three sentences.",
+    "whatWeBuilt": "TODO: what was built — scope, stack, notable engineering.",
+    "results": "TODO: results, quantified where possible."
+  },
+  "assets": {
+    "stills": [
+      "desktop-01.avif",
+      "desktop-02.avif",
+      "desktop-03.avif",
+      "mobile-01.avif",
+      "mobile-02.avif",
+      "mobile-03.avif"
+    ],
+    "hero": {
+      "mp4": "hero.mp4",
+      "webm": "hero.webm",
+      "poster": "hero-poster.avif",
+      "durationMs": 7000
+    }
+  }
+}

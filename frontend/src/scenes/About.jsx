@@ -1,8 +1,16 @@
 import { motion } from "framer-motion";
 import ContactButton from "../components/ContactButton";
 import Hopkins from "./Hopkins";
+import useDocumentMeta from "../hooks/useDocumentMeta";
 
 const About = () => {
+  useDocumentMeta({
+    title: "about",
+    description:
+      "Who we are and how we work. zlb studio is a web design and development studio building fast, well-engineered sites for startups and brands.",
+    path: "/about",
+  });
+
   return (
     <div className="relative bg-black text-white">
       {/* Hero Section */}
