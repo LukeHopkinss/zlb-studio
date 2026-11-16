@@ -37,6 +37,15 @@ const pageTransition = {
   transition: { duration: 0.5 },
 };
 
+// The splash hides the first home-page entrance. Keep repeat visits in the
+// same position rather than revealing a vertical slide only after reload.
+const homeTransition = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0 },
+  transition: { duration: 0.5 },
+};
+
 function App() {
 
   const location = useLocation();
@@ -90,7 +99,7 @@ function App() {
 
         <ScrollToTop />
         <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<motion.div {...pageTransition}><MainPage /></motion.div>} />
+          <Route path="/" element={<motion.div {...homeTransition}><MainPage /></motion.div>} />
           <Route path="/work/:slug" element={<motion.div {...pageTransition}><CaseStudy /></motion.div>} />
           <Route
             path="/about"
