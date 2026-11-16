@@ -27,10 +27,16 @@ export default function Navbar() {
     const containerRef = useRef(null);
     const location = useLocation();
 
-    // Derived rather than state: which link is highlighted is a pure function
-    // of the route, so it is right on the first paint instead of a commit late.
-    // -1 (an unrecognised route) leaves the pill wherever it last sat.
-    const active = matchIndex(location.pathname);
+    const matched = matchIndex(location.pathname);
+    const [lastSection, setLastSection] = useState(matched);
+    const isLegalPage = ['/privacy', '/terms'].includes(location.pathname);
+    // Legal pages keep the section context the visitor came from. Use this
+    // same index for the pill and text so they can never disagree.
+    const active = matched >= 0 ? matched : isLegalPage ? lastSection : -1;
+
+    useEffect(() => {
+        if (matched >= 0) setLastSection(matched);
+    }, [matched]);
 
     // The pill is absolutely positioned against the fixed container below, so
     // it has to be placed relative to that container. Viewport coordinates
@@ -79,7 +85,8 @@ export default function Navbar() {
     }, [measure]);
 
     return(
-        <div
+        <nav
+            aria-label="Primary"
             ref={containerRef}
             className='fixed bottom-0 left-0 w-full bg-gradient-to-t from-black via-black/95 to-transparent text-white py-6 sm:py-10 lg:py-15 z-50'
         >
@@ -87,7 +94,7 @@ export default function Navbar() {
 
                 {/* Held back until there is a real measurement, so it fades in
                     under its link instead of springing across from left: 0. */}
-                {layout.width > 0 && <NavbarHighlight layout={layout}/>}
+                {active >= 0 && layout.width > 0 && <NavbarHighlight layout={layout}/>}
 
                 {links.map((link, i) => (
                     <motion.div
@@ -97,6 +104,7 @@ export default function Navbar() {
                     >
                         <Link
                             to={link.path}
+                            aria-current={matched === i ? "page" : undefined}
                             className={`block cursor-pointer text-lg sm:text-2xl lg:text-3xl px-2 sm:px-3 lg:px-4 py-2 transition-all ${active === i ? "text-black" : "text-white"}`}
                         >
                         {link.label}
@@ -104,6 +112,6 @@ export default function Navbar() {
                     </motion.div>
                     ))}
             </div>
-        </div>
+        </nav>
     );
 }
