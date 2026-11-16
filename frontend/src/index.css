@@ -48,7 +48,7 @@
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(-33.3333%);
+    transform: translateX(var(--marquee-shift, -33.3333%));
   }
 }
 
