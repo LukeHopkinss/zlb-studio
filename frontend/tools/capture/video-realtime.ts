@@ -7,7 +7,7 @@ import { runFfmpeg, checkBudget, makePoster, mergeHeroIntoMeta, BUDGETS } from "
 
 // Sites with self-animating heroes (CSS/canvas/video) that a frame-sequence
 // scroll capture can't render in step with — record real time instead.
-const REALTIME_SLUGS = ["peeyew"];
+const REALTIME_SLUGS = ["peeyew", "2econd2kin"];
 
 async function recordSite(site: SiteConfig) {
   const rawDir = path.join(ARCHIVE_ROOT, site.slug, TODAY, "hero-raw");
@@ -38,6 +38,11 @@ async function recordSite(site: SiteConfig) {
       await page.goto(url, { waitUntil: "load", timeout: 30000 });
     }
 
+    if (site.dismissIntro) {
+      const skip = page.getByRole("button", { name: /skip/i });
+      if (await skip.isVisible()) await skip.click();
+      await page.waitForTimeout(700);
+    }
     await page.addStyleTag({
       content: `${site.hideSelectors.join(",") || ".__none__"} { display: none !important; }
         *::-webkit-scrollbar { display: none !important; }

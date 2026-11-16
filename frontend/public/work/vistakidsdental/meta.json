@@ -2,12 +2,12 @@
   "slug": "vistakidsdental",
   "name": "Vista Kids Dental",
   "url": "https://www.vistakidsdental.com",
-  "outcome": "TODO: real one-line result statement",
+  "outcome": "3 patient journeys: discover the practice, find aftercare, and request a visit.",
   "capturedAt": "2026-08-27",
   "caseStudy": {
-    "problem": "TODO: the problem in two or three sentences.",
-    "whatWeBuilt": "TODO: what was built — scope, stack, notable engineering.",
-    "results": "TODO: results, quantified where possible."
+    "problem": "Families need to understand a pediatric dental practice, find post-operative guidance, and request an appointment without searching through disconnected information.",
+    "whatWeBuilt": "A patient-focused website connecting the practice homepage, post-operative guidance, and appointment request page across desktop and mobile.",
+    "results": "3 key patient journeys are brought together in a single website: practice discovery, aftercare guidance, and appointment requests. All 3 are documented at desktop and mobile sizes. Booking and patient-growth data have not been supplied."
   },
   "assets": {
     "stills": [
@@ -24,5 +24,6 @@
       "poster": "hero-poster.avif",
       "durationMs": 7000
     }
-  }
+  },
+  "updatedAt": "2026-11-16"
 }

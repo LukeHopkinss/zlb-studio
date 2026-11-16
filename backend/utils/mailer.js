@@ -1,50 +1,20 @@
-const nodemailer = require('nodemailer');
+const { Resend } = require('resend');
 
-const transporter = nodemailer.createTransport({
-  service: 'Zoho',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASSWORD,
-  },
-});
-
-
-const sendAdminNotification = async (data) => {
-  const mailOptions = {
-    from: process.env.EMAIL_USER,
-    to: process.env.EMAIL_USER,
-    subject: `New Contact Form Submission from ${data.name}`,
-    text: `
-You’ve received a new message:
-
-Name: ${data.name}
-Email: ${data.email}
-Message: ${data.message}
-    `,
-  };
-
-  return transporter.sendMail(mailOptions);
+// These values stay on the server. Never expose the API key in Vite variables.
+const sendAdminNotification = async ({ name, email, message }) => {
+  if (!process.env.RESEND_API_KEY || !process.env.RESEND_FROM_EMAIL) {
+    throw new Error('Resend is not configured');
+  }
+  const resend = new Resend(process.env.RESEND_API_KEY);
+  const { data, error } = await resend.emails.send({
+    from: process.env.RESEND_FROM_EMAIL,
+    to: ['luke.hopkins@outlook.com'],
+    replyTo: email,
+    subject: `New zlb studio inquiry from ${name}`,
+    text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
+  });
+  if (error || !data?.id) throw new Error('Resend did not accept the message');
+  return data;
 };
 
-
-const sendUserConfirmation = async (data) => {
-  const mailOptions = {
-    from: process.env.EMAIL_USER,
-    to: data.email,
-    subject: `Thank you for contacting ZLB Studio`,
-    text: `Hi ${data.name},
-
-Thank you for reaching out to ZLB Studio. We’ve received your message and will get back to you as soon as possible.
-
-Here’s a copy of your message:
-"${data.message}"
-
-Best regards,  
-ZLB Studio Team
-    `,
-  };
-
-  return transporter.sendMail(mailOptions);
-};
-
-module.exports = { sendAdminNotification, sendUserConfirmation };
+module.exports = { sendAdminNotification };

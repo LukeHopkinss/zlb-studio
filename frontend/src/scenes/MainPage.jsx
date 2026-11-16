@@ -12,7 +12,7 @@ const MainPage = () => {
   useDocumentMeta({
     title: "work",
     description:
-      "zlb studio designs and builds websites for startups and brands, combining clean design with solid engineering. See our work for PYM Magazine, NYU Stern LARA, and Vista Kids Dental.",
+      "zlb studio designs and builds websites for startups and brands, combining clean design with solid engineering. See our work for PYM Magazine, NYU Stern LARA, Vista Kids Dental, and 2econd 2kin Magazine.",
     path: "/",
   });
 

@@ -10,7 +10,7 @@ export default function Header() {
   };
 
   return (
-    <div className="fixed top-6 left-6 sm:top-10 sm:left-10 lg:top-15 lg:left-15 w-full z-50 p-4">
+    <div className="fixed top-6 left-6 sm:top-10 sm:left-10 lg:top-15 lg:left-15 z-50 p-4">
       <Link
         to="/"
         onClick={handleClick}

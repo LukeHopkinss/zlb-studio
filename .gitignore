@@ -23,3 +23,14 @@ Thumbs.db
 npm-debug.log*
 yarn-debug.log*
 pnpm-debug.log*
+
+# Generated output and local secrets
+frontend/dist/
+**/node_modules/
+.env
+.env.*
+**/.env.*
+!**/.env.example
+
+# Regenerable raw capture files (published assets live in frontend/public/work)
+assets-archive/

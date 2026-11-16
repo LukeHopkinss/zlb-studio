@@ -2,12 +2,12 @@
   "slug": "peeyew",
   "name": "PEEYEW.net",
   "url": "https://www.peeyew.net",
-  "outcome": "TODO: real one-line result statement",
+  "outcome": "3 connected destinations for shopping, magazine content, and brand discovery.",
   "capturedAt": "2026-08-27",
   "caseStudy": {
-    "problem": "TODO: the problem in two or three sentences.",
-    "whatWeBuilt": "TODO: what was built — scope, stack, notable engineering.",
-    "results": "TODO: results, quantified where possible."
+    "problem": "PEEYEW brings together a shop, magazine, and distinct visual identity. The experience needs to help visitors move between those destinations without losing the character of the brand.",
+    "whatWeBuilt": "A connected web experience spanning the shop, PEEYEW Mag, and brand landing page, with a shared visual language across desktop and mobile.",
+    "results": "The delivered experience brings 3 key destinations into one website: shop, magazine, and landing. The case-study gallery documents all 3 at desktop and mobile sizes. Business conversion and revenue data have not been supplied."
   },
   "assets": {
     "stills": [
@@ -24,5 +24,6 @@
       "poster": "hero-poster.avif",
       "durationMs": 7000
     }
-  }
+  },
+  "updatedAt": "2026-11-16"
 }

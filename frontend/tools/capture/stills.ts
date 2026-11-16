@@ -19,6 +19,11 @@ const VIEWPORTS: Viewport[] = [
 ];
 
 async function prepPage(page: import("playwright").Page, site: SiteConfig) {
+  if (site.dismissIntro) {
+    const skip = page.getByRole("button", { name: /skip/i });
+    if (await skip.isVisible()) await skip.click();
+    await page.waitForTimeout(700);
+  }
   await page.addStyleTag({
     content: `
       ${site.hideSelectors.join(",") || ".__none__"} { display: none !important; }

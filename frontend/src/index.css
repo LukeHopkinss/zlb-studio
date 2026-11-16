@@ -141,3 +141,12 @@
 
 
 
+
+/* Leave room for the fixed navigation when focusing or scrolling to controls. */
+html {
+  scroll-padding-block: 9rem;
+  background: #000;
+}
+@media (min-height: 600px) {
+  html { scroll-padding-block: 12rem; }
+}

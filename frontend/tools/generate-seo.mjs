@@ -1,9 +1,8 @@
 // Emits public/sitemap.xml and public/robots.txt.
 //
-// Case-study routes are derived from the work asset directories rather than
-// hardcoded, so adding a project stays a capture-script + meta.json job with
-// no separate SEO edit to forget. Runs from `npm run build` via prebuild.
-import { readdir, readFile, writeFile, stat } from "node:fs/promises";
+// Case-study routes share the work grid’s project registry. Adding a
+// project to that registry includes it here without a separate SEO list. Runs from `npm run build` via prebuild.
+import { readFile, writeFile, stat } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -11,24 +10,20 @@ const HERE = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC = path.resolve(HERE, "../public");
 const WORK = path.join(PUBLIC, "work");
 
-// Kept in sync with src/siteConfig.js by hand — this script can't import JSX
-// app code, and duplicating one constant is cheaper than a build indirection.
-const SITE_URL = "https://zlbstudio.com";
+// Shared with browser metadata and the work grid.
+const { SITE_URL } = await import("../src/siteConfig.js");
+const { workSlugs } = await import("../src/data/workSlugs.js");
 
 const STATIC_ROUTES = [
   { path: "/", priority: "1.0", changefreq: "monthly" },
   { path: "/about", priority: "0.7", changefreq: "yearly" },
   { path: "/contact", priority: "0.7", changefreq: "yearly" },
+  { path: "/privacy", priority: "0.3", changefreq: "yearly" },
+  { path: "/terms", priority: "0.3", changefreq: "yearly" },
 ];
 
 async function workRoutes() {
-  let slugs = [];
-  try {
-    const entries = await readdir(WORK, { withFileTypes: true });
-    slugs = entries.filter((e) => e.isDirectory()).map((e) => e.name);
-  } catch {
-    return [];
-  }
+  const slugs = workSlugs;
 
   const routes = [];
   for (const slug of slugs) {
@@ -40,7 +35,7 @@ async function workRoutes() {
         path: `/work/${slug}`,
         priority: "0.8",
         changefreq: "yearly",
-        lastmod: (meta.capturedAt || mtime.toISOString().slice(0, 10)).slice(0, 10),
+        lastmod: (meta.updatedAt || meta.capturedAt || mtime.toISOString().slice(0, 10)).slice(0, 10),
       });
     } catch {
       console.warn(`  skipping /work/${slug} — no readable meta.json`);

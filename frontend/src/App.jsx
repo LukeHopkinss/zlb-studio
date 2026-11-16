@@ -7,6 +7,8 @@ import CaseStudy from './scenes/CaseStudy';
 import Contact from './scenes/Contact';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
+import Footer from './components/Footer';
+import Legal from './scenes/Legal';
 import ScrollToTop from './components/ScrollToTop';
 
 // Both of these pull in three.js / @react-three/*, which is the bulk of the
@@ -70,7 +72,7 @@ function App() {
 
   return (
     <div
-  className={`relative bg-black w-full min-h-screen ${["/about", "/"].includes(location.pathname) || location.pathname.startsWith("/work") ? "overflow-y-scroll" : "overflow-hidden"}`}>
+  className="relative bg-black w-full min-h-screen">
 
       {/* The real page is always mounted, even while the splash covers it.
           Previously it lived in the falsy branch of a ternary, so crawlers
@@ -101,7 +103,11 @@ function App() {
             }
           />
           <Route path="/contact" element={<motion.div {...pageTransition}><Contact /></motion.div>} />
+          <Route path="/privacy" element={<Legal kind="privacy" />} />
+          <Route path="/terms" element={<Legal kind="terms" />} />
+          <Route path="*" element={<main className="min-h-[70svh] px-6 pt-44 text-white"><h1 className="text-4xl">Page not found</h1><a href="/" className="inline-block mt-6 underline">Back to work</a></main>} />
         </Routes>
+        <Footer />
       </motion.div>
 
       <AnimatePresence>

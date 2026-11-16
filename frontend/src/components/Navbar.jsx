@@ -81,7 +81,7 @@ export default function Navbar() {
     return(
         <div
             ref={containerRef}
-            className='fixed bottom-0 left-0 w-full bg-transparent text-white py-6 sm:py-10 lg:py-15 z-50'
+            className='fixed bottom-0 left-0 w-full bg-gradient-to-t from-black via-black/95 to-transparent text-white py-6 sm:py-10 lg:py-15 z-50'
         >
             <div className='flex justify-center gap-4 sm:gap-6 lg:gap-10'>
 

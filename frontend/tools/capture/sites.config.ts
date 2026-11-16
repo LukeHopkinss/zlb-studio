@@ -15,6 +15,7 @@ export type SiteConfig = {
   };
   hideSelectors: string[]; // cookie banners, chat widgets, sticky CTAs
   waitForSelector?: string; // element that signals the page is really ready
+  dismissIntro?: boolean;
   extraWaitMs?: number; // let hero animations settle
 };
 
@@ -24,6 +25,16 @@ export type SiteConfig = {
 // empty for now — re-check by eye during stills/video capture in case a
 // banner is markup that probe doesn't catch (e.g. shadow DOM).
 export const sites: SiteConfig[] = [
+  {
+    slug: "2econd2kin",
+    dismissIntro: true,
+    url: "https://www.2econd2kinmagazine.com",
+    routes: ["/", "/lookbook", "/shop"],
+    sections: [{ name: "hero", scrollTo: 0 }],
+    heroScroll: { fromY: 0, toY: 1200, durationMs: 4000 },
+    hideSelectors: [],
+    extraWaitMs: 2500,
+  },
   {
     // Redirects peeyew.net -> www.peeyew.net; use the canonical host directly.
     slug: "peeyew",
