@@ -21,7 +21,7 @@ export default function ClienteleMarquee() {
               // Two percent of breathing room protects antialiased edges.
               const padding = h * 0.02;
               return (
-                <div key={name} className="mx-4 sm:mx-6 lg:mx-8 h-16 sm:h-28 lg:h-48 flex items-center justify-center shrink-0">
+                <div key={name} className="mx-5 sm:mx-7 lg:mx-10 h-16 sm:h-28 lg:h-48 flex items-center justify-center shrink-0">
                   <svg
                     viewBox={`${x - padding} ${y - padding} ${w + padding * 2} ${h + padding * 2}`}
                     width={w + padding * 2}
@@ -29,7 +29,7 @@ export default function ClienteleMarquee() {
                     role="img"
                     aria-label={copy === 0 ? name : undefined}
                     aria-hidden={copy > 0 ? true : undefined}
-                    className={`${larger ? 'h-16 sm:h-24 lg:h-28' : 'h-4 sm:h-6 lg:h-8'} w-auto shrink-0 grayscale`}
+                    className={`${larger ? 'h-14 sm:h-20 lg:h-24' : 'h-4 sm:h-6 lg:h-8'} w-auto shrink-0 grayscale`}
                   >
                     <image href={src} width={width} height={height} aria-hidden="true" />
                   </svg>
