@@ -1,11 +1,13 @@
 import '../index.css';
 
+// Artwork bounds exclude each source file's empty margins. An SVG viewport
+// fits the complete mark without enlarging it past an overflow-hidden frame.
 const clients = [
-  { name: 'Zevor', src: '/zevorlogo.png' },
-  { name: 'NYU Stern LARA', src: '/laralogo.png' },
-  { name: 'Vista Kids Dental', src: '/clients/vista-kids-dental.svg' },
-  { name: 'PEEYEW', src: '/clients/peeyew.png', scale: true },
-  { name: '2econd2kin Magazine', src: '/clients/secondskin.png' },
+  { name: 'Zevor', src: '/zevorlogo.png', width: 280, height: 280, bounds: [58, 100, 172, 26] },
+  { name: 'NYU Stern LARA', src: '/laralogo.png', width: 280, height: 280, bounds: [53, 98, 173, 42] },
+  { name: 'Vista Kids Dental', src: '/clients/vista-kids-dental.svg', width: 1280, height: 555, bounds: [0, 1, 1280, 554] },
+  { name: 'PEEYEW', src: '/clients/peeyew.png', width: 960, height: 560, bounds: [170, 221, 656, 140] },
+  { name: '2econd2kin', src: '/clients/secondskin.png', width: 854, height: 228, bounds: [21, 43, 816, 169] },
 ];
 
 export default function ClienteleMarquee() {
@@ -14,15 +16,25 @@ export default function ClienteleMarquee() {
       <div className="marquee-track">
         {[0, 1, 2].map((copy) => (
           <div key={copy} className="flex shrink-0" aria-hidden={copy > 0 ? true : undefined}>
-            {clients.map(({ name, src, scale }) => (
-              <div key={name} className="mx-4 sm:mx-6 lg:mx-8 h-16 sm:h-28 lg:h-48 w-40 sm:w-60 lg:w-80 flex items-center justify-center overflow-hidden shrink-0">
-                <img
-                  src={src}
-                  alt={copy === 0 ? name : ''}
-                  className={`w-full h-full object-contain grayscale ${scale ? 'scale-150' : ''}`}
-                />
-              </div>
-            ))}
+            {clients.map(({ name, src, width, height, bounds: [x, y, w, h] }) => {
+              // Two percent of breathing room protects antialiased edges.
+              const padding = h * 0.02;
+              return (
+                <div key={name} className="mx-4 sm:mx-6 lg:mx-8 h-16 sm:h-28 lg:h-48 w-40 sm:w-72 lg:w-80 flex items-center justify-center shrink-0">
+                  <svg
+                    viewBox={`${x - padding} ${y - padding} ${w + padding * 2} ${h + padding * 2}`}
+                    width={w + padding * 2}
+                    height={h + padding * 2}
+                    role="img"
+                    aria-label={copy === 0 ? name : undefined}
+                    aria-hidden={copy > 0 ? true : undefined}
+                    className="h-6 sm:h-10 lg:h-12 w-auto max-w-full grayscale"
+                  >
+                    <image href={src} width={width} height={height} aria-hidden="true" />
+                  </svg>
+                </div>
+              );
+            })}
           </div>
         ))}
       </div>
