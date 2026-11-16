@@ -11,7 +11,7 @@ export default function Hopkins() {
       </div>
 
       <p className="text-base text-white/80 leading-snug px-4 mt-4 max-w-md">
-        Hopkins designs and builds websites end-to-end, from first concept through launch, with a focus on clean design and solid front-end engineering. He brings work experience from NBCUniversal to every project.
+        Hopkins designs and builds websites end-to-end, from first concept through launch, with a focus on clean design and solid front-end engineering. His experience includes work at NBCUniversal and Y Combinator-backed startups.
       </p>
     </div>
   );

@@ -12,7 +12,7 @@ const MainPage = () => {
   useDocumentMeta({
     title: "work",
     description:
-      "zlb studio designs and builds websites for startups and brands, combining clean design with solid engineering. See our work for PYM Magazine, NYU Stern LARA, Vista Kids Dental, and 2econd 2kin Magazine.",
+      "zlb studio designs and builds websites for startups and brands, combining clean design with solid engineering. Founded by Luke Hopkins, with experience at NBCUniversal and Y Combinator-backed startups. See our work for PYM Magazine, NYU Stern LARA, Vista Kids Dental, and 2econd 2kin Magazine.",
     path: "/",
   });
 
@@ -76,6 +76,7 @@ const MainPage = () => {
             <p className="text-xl sm:text-2xl lg:text-3xl">combining clean design with solid engineering.</p>
             <p className="text-xl sm:text-2xl lg:text-3xl">from first concept to launch, we handle the full build,</p>
             <p className="text-xl sm:text-2xl lg:text-3xl">helping our clients ship fast with sites that actually work.</p>
+            <p className="text-xl sm:text-2xl lg:text-3xl">founded by Luke Hopkins, with experience at NBCUniversal and Y Combinator-backed startups.</p>
         </motion.div>
       </div>
 

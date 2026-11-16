@@ -7,7 +7,7 @@ const About = () => {
   useDocumentMeta({
     title: "about",
     description:
-      "Who we are and how we work. zlb studio is a web design and development studio building fast, well-engineered sites for startups and brands.",
+      "Meet Luke Hopkins, founder of zlb studio, with experience at NBCUniversal and Y Combinator-backed startups. We design and build websites for startups and brands.",
     path: "/about",
   });
 
