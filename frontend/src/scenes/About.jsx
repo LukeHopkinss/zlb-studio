@@ -12,9 +12,9 @@ const About = () => {
   });
 
   return (
-    <div className="relative bg-black text-white">
+    <div className="relative bg-black text-white pt-20">
       {/* Hero Section */}
-      <div className="min-h-screen flex flex-col items-center justify-center px-6 pt-12 pb-8 mt-20">
+      <div className="min-h-screen flex flex-col items-center justify-center px-6 pt-12 pb-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}

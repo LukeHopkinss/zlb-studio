@@ -9,7 +9,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #000;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -145,7 +145,6 @@
 /* Leave room for the fixed navigation when focusing or scrolling to controls. */
 html {
   scroll-padding-block: 9rem;
-  background: #000;
 }
 @media (min-height: 600px) {
   html { scroll-padding-block: 12rem; }
