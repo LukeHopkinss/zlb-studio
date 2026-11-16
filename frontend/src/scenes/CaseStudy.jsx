@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import LoopVideo from "../components/work/LoopVideo";
 import Lightbox from "../components/work/Lightbox";
 import useDocumentMeta from "../hooks/useDocumentMeta";
@@ -53,11 +53,7 @@ export default function CaseStudy() {
   const stillUrls = stills.map((still) => `${base}/${still}`);
 
   return (
-    <div className="pt-32 pb-40 min-h-screen bg-black text-white px-6 sm:pl-28 sm:pr-12 lg:pl-38 lg:pr-16">
-      <Link to="/" className="text-sm opacity-70 hover:opacity-100">
-        &larr; back to work
-      </Link>
-
+    <main className="pt-32 pb-40 min-h-screen bg-black text-white px-6 sm:pl-28 sm:pr-12 lg:pl-38 lg:pr-16">
       {!meta && loaded && (
         <>
           <h1 className="text-4xl sm:text-5xl mt-8">{slug}</h1>
@@ -68,7 +64,6 @@ export default function CaseStudy() {
       {meta && (
         <div className="max-w-4xl">
           <h1 className="text-4xl sm:text-5xl mt-8">{meta.name}</h1>
-          {meta.outcome && <p className="mt-3 text-lg opacity-80">{meta.outcome}</p>}
 
           {meta.assets?.hero ? (
             <div className="mt-10 w-full aspect-video overflow-hidden bg-neutral-900">
@@ -89,14 +84,14 @@ export default function CaseStudy() {
 
           {meta.caseStudy?.problem && (
             <section className="mt-12 space-y-2">
-              <h2 className="text-sm uppercase tracking-wide opacity-50">The problem</h2>
+              <h2 className="text-sm uppercase tracking-wide opacity-50">The challenge</h2>
               <p className="text-lg sm:text-xl">{meta.caseStudy.problem}</p>
             </section>
           )}
 
           {meta.caseStudy?.whatWeBuilt && (
             <section className="mt-10 space-y-2">
-              <h2 className="text-sm uppercase tracking-wide opacity-50">What we built</h2>
+              <h2 className="text-sm uppercase tracking-wide opacity-50">The approach</h2>
               <p className="text-lg sm:text-xl">{meta.caseStudy.whatWeBuilt}</p>
             </section>
           )}
@@ -127,20 +122,24 @@ export default function CaseStudy() {
 
           {meta.caseStudy?.results && (
             <section className="mt-12 space-y-2">
-              <h2 className="text-sm uppercase tracking-wide opacity-50">Results</h2>
+              <h2 className="text-sm uppercase tracking-wide opacity-50">Designed for</h2>
               <p className="text-lg sm:text-xl">{meta.caseStudy.results}</p>
             </section>
           )}
 
-          {meta.url && (
-            <a
-              href={meta.url}
-              target="_blank"
-              rel="noopener"
-              className="inline-block mt-12 text-sm underline opacity-80 hover:opacity-100"
-            >
-              Visit site
-            </a>
+          {meta.caseStudy?.targets?.length > 0 && (
+            <section className="mt-10" aria-labelledby="targets-heading">
+              <h2 id="targets-heading" className="text-sm uppercase tracking-wide text-neutral-400">Illustrative targets</h2>
+              <p className="mt-2 text-sm text-neutral-400">Example goals, not measured client results.</p>
+              <dl className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-8 border-t border-white/20 pt-6">
+                {meta.caseStudy.targets.map(({ value, label }) => (
+                  <div key={label} className="min-w-0 flex flex-col-reverse gap-2">
+                    <dt className="text-base text-neutral-300">{label}</dt>
+                    <dd className="text-4xl sm:text-5xl tracking-tight tabular-nums">{value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
           )}
         </div>
       )}
@@ -151,6 +150,6 @@ export default function CaseStudy() {
         onClose={() => setExpandedIndex(null)}
         onNavigate={setExpandedIndex}
       />
-    </div>
+    </main>
   );
 }

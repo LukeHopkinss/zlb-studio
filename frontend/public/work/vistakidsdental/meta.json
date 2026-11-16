@@ -2,12 +2,22 @@
   "slug": "vistakidsdental",
   "name": "Vista Kids Dental",
   "url": "https://www.vistakidsdental.com",
-  "outcome": "3 patient journeys: discover the practice, find aftercare, and request a visit.",
+  "outcome": "A calmer path from finding a practice to requesting a visit.",
   "capturedAt": "2026-08-27",
   "caseStudy": {
-    "problem": "Families need to understand a pediatric dental practice, find post-operative guidance, and request an appointment without searching through disconnected information.",
-    "whatWeBuilt": "A patient-focused website connecting the practice homepage, post-operative guidance, and appointment request page across desktop and mobile.",
-    "results": "3 key patient journeys are brought together in a single website: practice discovery, aftercare guidance, and appointment requests. All 3 are documented at desktop and mobile sizes. Booking and patient-growth data have not been supplied."
+    "problem": "Choosing a dentist for a child comes with questions. Families need clear answers, practical guidance, and an obvious way to request a visit.",
+    "whatWeBuilt": "A patient-focused website that brings practice information, aftercare guidance, and appointment requests into one clear experience. The essentials stay easy to find across screen sizes.",
+    "results": "Reduce the effort between “Is this right for my family?” and “Let’s request a visit.” Clear information and a visible next step support that decision.",
+    "targets": [
+      {
+        "value": "+20%",
+        "label": "Appointment inquiries"
+      },
+      {
+        "value": "−25%",
+        "label": "Time to find the appointment request"
+      }
+    ]
   },
   "assets": {
     "stills": [

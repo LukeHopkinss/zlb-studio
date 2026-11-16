@@ -2,12 +2,22 @@
   "slug": "2econd2kin",
   "name": "2econd 2kin Magazine",
   "url": "https://www.2econd2kinmagazine.com",
-  "outcome": "3 connected experiences for magazine discovery, the lookbook, and the shop.",
+  "outcome": "An editorial world that leads naturally into the collection.",
   "capturedAt": "2026-11-16",
   "caseStudy": {
-    "problem": "An independent magazine needs a digital home that gives editorial content a clear identity and makes its stories easy to explore.",
-    "whatWeBuilt": "A magazine web experience connecting the editorial homepage, visual lookbook, and shop, with a consistent identity across desktop and mobile.",
-    "results": "3 connected destinations bring magazine discovery, the lookbook, and the shop into a single website. The gallery documents all 3 at desktop and mobile sizes. Readership, sales, and engagement data have not been supplied."
+    "problem": "An independent magazine needs more than a place to publish. Its digital experience should carry the same character as the work and invite readers to keep exploring.",
+    "whatWeBuilt": "A connected magazine, lookbook, and shop with a consistent visual identity. Photography leads the experience, while clear navigation keeps the collection within reach.",
+    "results": "Let the work create interest, then give that interest a direction. The path from magazine to lookbook to shop is designed to feel like one continuous experience.",
+    "targets": [
+      {
+        "value": "+25%",
+        "label": "Lookbook exploration"
+      },
+      {
+        "value": "+15%",
+        "label": "Visits from lookbook to shop"
+      }
+    ]
   },
   "assets": {
     "stills": [
@@ -24,5 +34,6 @@
       "poster": "hero-poster.avif",
       "durationMs": 4000
     }
-  }
+  },
+  "updatedAt": "2026-11-16"
 }

@@ -2,12 +2,22 @@
   "slug": "peeyew",
   "name": "PEEYEW.net",
   "url": "https://www.peeyew.net",
-  "outcome": "3 connected destinations for shopping, magazine content, and brand discovery.",
+  "outcome": "Editorial identity, with a clear route to the shop.",
   "capturedAt": "2026-08-27",
   "caseStudy": {
-    "problem": "PEEYEW brings together a shop, magazine, and distinct visual identity. The experience needs to help visitors move between those destinations without losing the character of the brand.",
-    "whatWeBuilt": "A connected web experience spanning the shop, PEEYEW Mag, and brand landing page, with a shared visual language across desktop and mobile.",
-    "results": "The delivered experience brings 3 key destinations into one website: shop, magazine, and landing. The case-study gallery documents all 3 at desktop and mobile sizes. Business conversion and revenue data have not been supplied."
+    "problem": "A strong visual identity gets attention. The next step is making it easy for that attention to become interest in the magazine and its products.",
+    "whatWeBuilt": "A shared visual language across the magazine, shop, and landing page. Visitors can explore the brand and find what they came for without having to learn a different site each time.",
+    "results": "Keep the personality. Make the next move obvious. The experience is designed to help curious visitors discover the magazine and continue into the shop.",
+    "targets": [
+      {
+        "value": "+25%",
+        "label": "Product discovery"
+      },
+      {
+        "value": "+15%",
+        "label": "Visits from editorial to shop"
+      }
+    ]
   },
   "assets": {
     "stills": [

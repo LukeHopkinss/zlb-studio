@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import LoopVideo from "./LoopVideo";
 
 export default function ProjectTile({ project }) {
-  const { slug, name, outcome, assets } = project;
+  const { slug, name, assets } = project;
   const base = `/work/${slug}`;
   const hero = assets?.hero;
 
@@ -27,7 +27,6 @@ export default function ProjectTile({ project }) {
       </div>
       <div className="mt-4 space-y-1 text-center">
         <h3 className="text-xl sm:text-2xl">{name}</h3>
-        <p className="text-sm sm:text-base opacity-70">{outcome}</p>
       </div>
     </Link>
   );

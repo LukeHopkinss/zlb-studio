@@ -2,12 +2,22 @@
   "slug": "nyulara",
   "name": "NYU Stern LARA",
   "url": "https://www.nyulara.org",
-  "outcome": "2 core experiences connecting the organization\u2019s story with its programming.",
+  "outcome": "From discovering the organization to finding a reason to join.",
   "capturedAt": "2026-08-27",
   "caseStudy": {
-    "problem": "A student organization needs a clear place to introduce itself and make its programming discoverable to prospective members and partners.",
-    "whatWeBuilt": "An organization website with a dedicated programming showcase, clear navigation, and layouts for desktop and mobile.",
-    "results": "2 core experiences\u2014organization overview and programming showcase\u2014give visitors a direct path from discovering LARA to exploring its activities. Both are documented at desktop and mobile sizes. Membership and event-attendance data have not been supplied."
+    "problem": "Prospective members need to understand what LARA does and see where they fit. A clear introduction matters as much as the first impression.",
+    "whatWeBuilt": "An organization website with a dedicated programming showcase. A clear hierarchy puts the group’s purpose and activities within easy reach on desktop and mobile.",
+    "results": "Help visitors picture themselves taking part. Bring the organization’s purpose and programming together so interest has somewhere to go.",
+    "targets": [
+      {
+        "value": "+20%",
+        "label": "Programming exploration"
+      },
+      {
+        "value": "+15%",
+        "label": "Membership inquiries"
+      }
+    ]
   },
   "assets": {
     "stills": [
